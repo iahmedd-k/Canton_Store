@@ -53,6 +53,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
       {/* Button */}
       <div className="text-center mt-8 md:mt-12">
+        
         <Link to="/products">
           <button className="bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full hover:from-amber-700 hover:to-amber-800 transition-all duration-200 font-medium shadow-lg hover:shadow-xl">
             View All Products

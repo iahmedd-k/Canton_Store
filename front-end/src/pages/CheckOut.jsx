@@ -3,7 +3,7 @@ import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { FiCreditCard, FiTruck, FiLock } from "react-icons/fi";
 import axios from "axios";
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const CheckOut = () => {
   const { cartItems, getTotal, clearCart } = useCart();
@@ -64,7 +64,7 @@ const CheckOut = () => {
       };
       if (userId) payload.user = userId;
 
-  const { data } = await axios.post(`${API_URL}/orders`, payload);
+  const { data } = await axios.post(`${API_URL}/orders/`, payload);
 
       if (data && data._id) {
         setOrderPlaced(true);

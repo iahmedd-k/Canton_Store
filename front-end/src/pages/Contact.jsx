@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Contact = () => {
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  const API_URL = import.meta.env.VITE_API_URL;
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState('');

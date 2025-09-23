@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiHome, FiGrid, FiShoppingBag, FiUser, FiSettings, FiLogOut, FiChevronRight } from "react-icons/fi";
 import axios from "axios";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const Sidebar = ({ isOpen, onClose }) => {
   const [categories, setCategories] = useState([]);
   const location = useLocation();
@@ -10,7 +10,7 @@ const Sidebar = ({ isOpen, onClose }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/categories/");
+        const res = await axios.get(`${API_URL}/categories/`);
         setCategories(res.data || []);
       } catch (err) {
         console.error("Error fetching categories:", err);
